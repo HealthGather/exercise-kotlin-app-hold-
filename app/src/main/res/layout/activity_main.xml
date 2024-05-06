@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    tools:context="lyi.AIworkout.posemon.MainActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/smallimageshows"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="16dp"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/btn_star"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/now_act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在做："
+            android:gravity="center"
+            android:alpha="0"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/act_time"
+            android:layout_width="171dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="121dp"
+            android:gravity="center"
+            android:text="組         次/10次"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:alpha="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-1dp"
+            android:background="@drawable/card_background">
+
+
+            <ImageButton
+                android:id="@+id/handsback"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="280dp"
+                android:alpha="1"
+                android:backgroundTint="#00000000"
+                android:contentDescription="handsback"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/handback"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/handsup"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="handsup"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/handup"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/handsfront"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="204dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="handsfront"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/handsfront"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/foot1"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="68dp"
+                android:contentDescription="foot1"
+                android:scaleType="fitXY"
+                android:src="@drawable/foot1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/foot"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="136dp"
+                android:contentDescription="foot"
+                android:scaleType="fitXY"
+                android:src="@drawable/foot"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/neck"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="76dp"
+                android:contentDescription="neck"
+                android:scaleType="fitXY"
+                android:src="@drawable/neck"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/hip"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="hip"
+                android:scaleType="fitXY"
+                android:src="@drawable/hip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tvCamera"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="鏡頭方向:"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <Spinner
+                android:id="@+id/spnCamera"
+                android:layout_width="172dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvCamera"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/hands_"
+                android:layout_width="70dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:text="手臂: "
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/neck_"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="12dp"
+                android:text="頸: "
+                android:textSize="25dp"
+                app:layout_constraintEnd_toStartOf="@+id/neck"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/foot_"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="8dp"
+                android:text="腳: "
+                android:textSize="25dp"
+                app:layout_constraintEnd_toStartOf="@+id/foot"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/hip_"
+                android:layout_width="46dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="16dp"
+                android:text="腰: "
+                android:textSize="25dp"
+                app:layout_constraintEnd_toStartOf="@+id/hip"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/handsbacktick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/handsback"
+                app:layout_constraintEnd_toEndOf="@+id/handsback"
+                app:layout_constraintStart_toEndOf="@+id/hands_"
+                app:layout_constraintTop_toTopOf="@+id/handsback"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/handsuptick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/handsup"
+                app:layout_constraintEnd_toEndOf="@+id/handsup"
+                app:layout_constraintStart_toStartOf="@+id/handsup"
+                app:layout_constraintTop_toTopOf="@+id/handsup"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/handsfronttick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/handsfront"
+                app:layout_constraintEnd_toEndOf="@+id/handsfront"
+                app:layout_constraintStart_toStartOf="@+id/handsfront"
+                app:layout_constraintTop_toTopOf="@+id/handsfront"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/necktick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/neck"
+                app:layout_constraintEnd_toEndOf="@+id/neck"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/neck"
+                app:layout_constraintTop_toTopOf="@+id/neck"
+                app:layout_constraintVertical_bias="0.322"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/foottick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/foot"
+                app:layout_constraintEnd_toEndOf="@+id/foot"
+                app:layout_constraintStart_toStartOf="@+id/foot"
+                app:layout_constraintTop_toTopOf="@+id/foot"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/foot1tick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/foot1"
+                app:layout_constraintStart_toStartOf="@+id/foot1"
+                app:layout_constraintTop_toTopOf="@+id/foot1"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/hiptick"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:alpha="0"
+                android:background="#00000000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/hip"
+                app:layout_constraintEnd_toEndOf="@+id/hip"
+                app:layout_constraintStart_toStartOf="@+id/hip"
+                app:layout_constraintTop_toTopOf="@+id/hip"
+                app:srcCompat="@drawable/tick"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/showcaseimage"
+            android:layout_width="wrap_content"
+            android:layout_height="520dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="128dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/handback" />
+
+        <FrameLayout
+            android:id="@+id/VideoFrame"
+            android:layout_width="match_parent"
+            android:layout_height="595dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:background="#000000"
+            android:visibility="invisible">
+
+            <VideoView
+                android:id="@+id/showcaseVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/closeimage"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="27dp"
+            android:text="X"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:text="返回"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
